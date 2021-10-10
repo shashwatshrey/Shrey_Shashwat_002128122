@@ -94,9 +94,16 @@ public class AddSupplierJPanel extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
+        
+        if(txtName.getText().equals("")){
+          JOptionPane.showMessageDialog(null, "Please enter data!", "Info", JOptionPane.INFORMATION_MESSAGE);  
+          return;
+        }else{
         Area area = areaDirectory.addSupplier();
-        area.setAreaName(txtName.getText());
+        area.setAreaName(txtName.getText()); 
         JOptionPane.showMessageDialog(null, "Area initiated successfully!!", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
