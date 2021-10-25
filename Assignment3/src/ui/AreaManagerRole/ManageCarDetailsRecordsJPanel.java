@@ -94,7 +94,7 @@ public class ManageCarDetailsRecordsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setText("New Product...");
+        btnCreate.setText("New car");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
@@ -115,7 +115,7 @@ public class ManageCarDetailsRecordsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setText("Delete Product");
+        btnDelete.setText("Delete car");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);

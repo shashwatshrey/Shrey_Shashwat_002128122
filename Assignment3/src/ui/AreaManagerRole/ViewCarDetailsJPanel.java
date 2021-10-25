@@ -48,7 +48,7 @@ public class ViewCarDetailsJPanel extends javax.swing.JPanel {
 
         txtCategory.setEditable(false);
 
-        btnUpdate.setText("Update Product");
+        btnUpdate.setText("Update car");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);

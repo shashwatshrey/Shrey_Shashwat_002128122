@@ -63,10 +63,10 @@ public class SearchForCarDetailsJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(lblProductId)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch))
-                .addGap(175, 175, 175))
+                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSearch)
+                .addGap(72, 72, 72))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,10 +78,9 @@ public class SearchForCarDetailsJPanel extends javax.swing.JPanel {
                 .addGap(114, 114, 114)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProductId))
-                .addGap(18, 18, 18)
-                .addComponent(btnSearch)
-                .addContainerGap())
+                    .addComponent(lblProductId)
+                    .addComponent(btnSearch))
+                .addGap(399, 399, 399))
         );
     }// </editor-fold>//GEN-END:initComponents
 
