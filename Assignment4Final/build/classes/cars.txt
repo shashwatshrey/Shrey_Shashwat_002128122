@@ -1,7 +1,0 @@
-1,SUV,2015,Toyota,3,Toy1711
-1,HatchBack,2015,Mercedes,2,Merc1711
-1,SUV,2015,Honda,2,Honda1711
-1,Sedan,2018,BMW,2,BMW1711
-1,SUV,2019,Audi,2,Aud1711
-
-
