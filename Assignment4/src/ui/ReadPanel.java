@@ -396,7 +396,10 @@ public class ReadPanel extends javax.swing.JPanel {
         
         for(Map.Entry mapElement : patientMap.entrySet()){
             Patient p = (Patient) mapElement.getValue();
-            patients.add(p);
+            if(p.getcommunityName() == communityZip && p.getPerson().getAge() > minAge){
+                patients.add(p);
+            }
+            
         }
         
         for(Patient p : patients){
