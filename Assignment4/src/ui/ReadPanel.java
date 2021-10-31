@@ -32,7 +32,7 @@ public class ReadPanel extends javax.swing.JPanel {
         initComponents();
         this.medicalsystem = medicalSystem;
         this.patientdirectory = patientdirectory;
-        
+        populateTable();
     }
 
     /**
@@ -358,6 +358,31 @@ public class ReadPanel extends javax.swing.JPanel {
         }
         
     }
+
+    private void populateTable() {
+DefaultTableModel model = (DefaultTableModel) tblVitals.getModel();
+        model.setRowCount(0);
+        
+        ArrayList<Patient> patients = new ArrayList<Patient>();
+        HashMap<String , Patient> patientMap = medicalsystem.getPatientDirectory();
+        
+        for(Map.Entry mapElement : patientMap.entrySet()){
+            Patient p = (Patient) mapElement.getValue();
+             patients.add(p);
+            
+            
+        }
+        
+        for(Patient p : patients){
+            Object[] row = new Object[4];
+           
+            row[0] = p;
+            row[1] = p.getEncounterHistory().getEncounterHistory().get(0).getVitalSign().getSystolic();
+            row[2] = p.getEncounterHistory().getEncounterHistory().get(0).getVitalSign().getDiastolic();
+            row[3] = p.getPerson().getAge();
+            
+            model.addRow(row);
+        }    }
 
    
 }

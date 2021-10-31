@@ -31,7 +31,7 @@ public class CreatePanel extends javax.swing.JPanel {
         initComponents();
         this.medicalsystem = medicalsystem;
         //this.patientdirectory = patientdirectory;
-        
+        //populateTable();
     }
 
     /**
@@ -227,19 +227,66 @@ public class CreatePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        
+        boolean isNull = false;
         // TODO add your handling code here:
+        
+        if(txtcityName.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         String cityName = txtcityName.getText();
+        
+        if(txtCommunity.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         int communityZip = Integer.parseInt(txtCommunity.getText());
+        System.out.print(communityZip);
+        
+        if(txtHouse.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         String housename = txtHouse.getText();
+        
+        if(txtName.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         String name = txtName.getText();
+        
+        if(txtAge.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         int age = Integer.parseInt(txtAge.getText());
+        
+        if(jComboGender.getSelectedItem().toString().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         String gender = jComboGender.getSelectedItem().toString();
+        
+        if(jDateChooser1.getDate().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         Date date = jDateChooser1.getDate();
+        
+        if(txtSystolic.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         int systolic = Integer.parseInt(txtSystolic.getText());
+        
+        if(txtDiastolic.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Enter all details");
+            return;
+        }
         int diastolic = Integer.parseInt(txtDiastolic.getText());
         
-          
+        
+        
 //        PersonDirectory personDirectory = new PersonDirectory();
 //        PatientDirectory patientDirectory = new PatientDirectory();
 //        medicalsystem.setPersonDirectory(personDirectory);
@@ -385,7 +432,7 @@ public class CreatePanel extends javax.swing.JPanel {
         
         
         for(String [] entry : entries){
-             String cityName = entry[0];
+        String cityName = entry[0];
         System.out.println("City -> " + cityName);
         int communityZip = Integer.parseInt(entry[1]);
         System.out.println("communityZip -> " + communityZip);
@@ -515,4 +562,6 @@ public class CreatePanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtSystolic;
     private javax.swing.JTextField txtcityName;
     // End of variables declaration//GEN-END:variables
+
+    
 }
