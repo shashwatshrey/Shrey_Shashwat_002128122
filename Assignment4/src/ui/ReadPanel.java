@@ -45,7 +45,6 @@ public class ReadPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVitals = new javax.swing.JTable();
@@ -57,7 +56,6 @@ public class ReadPanel extends javax.swing.JPanel {
         lblAge = new javax.swing.JLabel();
         lblGender = new javax.swing.JLabel();
         txtGender = new javax.swing.JTextField();
-        txtfindCity = new javax.swing.JTextField();
         txtfindCommunity = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtfindAge = new javax.swing.JTextField();
@@ -66,8 +64,6 @@ public class ReadPanel extends javax.swing.JPanel {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Records");
-
-        jLabel2.setText("CIty :");
 
         jLabel3.setText("Community:");
 
@@ -118,12 +114,6 @@ public class ReadPanel extends javax.swing.JPanel {
 
         lblGender.setText("Gender:");
 
-        txtfindCity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfindCityActionPerformed(evt);
-            }
-        });
-
         jLabel4.setText("Min Age:");
 
         btnFind.setText("FInd");
@@ -151,8 +141,7 @@ public class ReadPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
+                                .addGap(51, 51, 51)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,12 +164,11 @@ public class ReadPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btnDelete))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtfindCity, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
+                                        .addGap(127, 127, 127)
                                         .addComponent(jLabel3)
-                                        .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtfindCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
+                                        .addGap(24, 24, 24)
                                         .addComponent(jLabel4)
                                         .addGap(18, 18, 18)
                                         .addComponent(txtfindAge, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,16 +190,13 @@ public class ReadPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(txtfindCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtfindCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(txtfindAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFind))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnDelete)
@@ -230,7 +215,7 @@ public class ReadPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblGender)
                             .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -268,10 +253,6 @@ public class ReadPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void txtfindCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfindCityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfindCityActionPerformed
-
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
         // TODO add your handling code here:
         System.out.print("-----Data STORED in readScreen -------");
@@ -282,42 +263,7 @@ public class ReadPanel extends javax.swing.JPanel {
         int minAge = Integer.parseInt(txtfindAge.getText());
         populateTable(communityZip , minAge);
         
-        //System.out.println("Person " + house.getPersons() );
         
-//        Community community = medicalsystem.getCities().get(cityName).getCommunity().get(communityZip);
-//        System.out.print("Communities -> " + medicalsystem.getCities().get(cityName).getCommunity());
-//        HashMap<String , House> houseMap = community.getHouses();
-//        System.out.print("Added houses -> " + houseMap);
-//        ArrayList<Person> people = new ArrayList<Person>();
-//        ArrayList<House>houseList = new ArrayList<House>();
-//        for(Map.Entry mapElement : houseMap.entrySet()){
-//            House house = (House) mapElement.getValue();
-//            houseList.add(house);
-//            HashMap<String , Person> peopleList = house.getPersons();
-//            for(Map.Entry personElement : peopleList.entrySet()){
-//                Person person = (Person) personElement.getValue();
-//                people.add(person);
-//            }
-//        }
-//        System.out.println("Number of Houses -> " + houseList.size());
-//        System.out.println("Number of People -> " + people.size());
-//        for(Person p : people){
-//            System.out.println("This right here ios the list-> " + p.getName());
-//        }
-//            PatientDirectory patientDirectory = medicalsystem.getPatientDirectory();
-//            ArrayList<Patient> patientList = patientDirectory.getPatients();
-//            ArrayList<Patient> patientToDisplay = new ArrayList<Patient>();
-//            for(Patient p : patientList){
-//                if(p.getcommunityName() == communityZip){
-//                    patientToDisplay.add(p);
-//                }
-//            }
-//            
-//            System.out.println(patientToDisplay.size());
-//            
-        
-        
-        //populateTable(cityName , communityZip, minAge);
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
@@ -371,7 +317,6 @@ public class ReadPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -383,7 +328,6 @@ public class ReadPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtfindAge;
-    private javax.swing.JTextField txtfindCity;
     private javax.swing.JTextField txtfindCommunity;
     // End of variables declaration//GEN-END:variables
 
@@ -396,7 +340,7 @@ public class ReadPanel extends javax.swing.JPanel {
         
         for(Map.Entry mapElement : patientMap.entrySet()){
             Patient p = (Patient) mapElement.getValue();
-            if(p.getcommunityName() == communityZip && p.getPerson().getAge() > minAge){
+            if(p.getcommunityName() == communityZip && p.getPerson().getAge() > minAge &&p.getEncounterHistory().getEncounterHistory().get(0).getVitalSign().getSystolic()>100){
                 patients.add(p);
             }
             
