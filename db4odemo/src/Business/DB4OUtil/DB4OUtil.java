@@ -9,11 +9,7 @@ import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
 import java.nio.file.Paths;
 
-/**
- *
- * @author rrheg
- * @author Lingfeng
- */
+
 public class DB4OUtil {
 
     private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
@@ -36,6 +32,7 @@ public class DB4OUtil {
         try {
 
             EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
+            ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
             config.common().add(new TransparentPersistenceSupport());
             //Controls the number of objects in memory
             config.common().activationDepth(Integer.MAX_VALUE);
@@ -45,7 +42,7 @@ public class DB4OUtil {
             //Register your top most Class here
             config.common().objectClass(EcoSystem.class).cascadeOnUpdate(true); // Change to the object you want to save
 
-            ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
+            
             return db;
         } catch (Exception ex) {
             System.out.print(ex.getMessage());
@@ -61,25 +58,16 @@ public class DB4OUtil {
     }
     
     public EcoSystem retrieveSystem(){
-        try{
-            ObjectContainer conn = createConnection();
+        ObjectContainer conn = createConnection();
         ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the object you want to save
         EcoSystem system;
-        
-            if (systems.size() == 0){
+        if (systems.size() == 0){
             system = ConfigureASystem.configure();  // If there's no System in the record, create a new one
         }
         else{
             system = systems.get(systems.size() - 1);
         }
-        
-        
         conn.close();
         return system;
-       
-        }catch(Exception e){
-            System.out.println("Exception caught");
-        }
-        return null;
     }
 }

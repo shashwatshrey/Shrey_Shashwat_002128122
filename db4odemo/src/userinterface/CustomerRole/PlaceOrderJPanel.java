@@ -6,31 +6,35 @@ package userinterface.CustomerRole;
 
 import Business.EcoSystem;
 import Business.Organization;
+import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author raunak
- */
-public class RequestLabTestJPanel extends javax.swing.JPanel {
+
+public class PlaceOrderJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    
     private UserAccount userAccount;
+    private EcoSystem ecoSystem;
+    private Restaurant restaurant;
+    
     /**
      * Creates new form RequestLabTestJPanel
      */
-    public RequestLabTestJPanel(JPanel userProcessContainer, UserAccount account) {
+    public PlaceOrderJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecoSystem, Restaurant r) {
         initComponents();
-        
+        this.restaurant=r;
         this.userProcessContainer = userProcessContainer;
-        
         this.userAccount = account;
+        this.ecoSystem = ecoSystem;
+        valueLabel.setText(r.getRestaurentName());
        
     }
 
@@ -43,48 +47,60 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        requestTestJButton = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        messageJTextField = new javax.swing.JTextField();
+        txtOrderMess = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(153, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        requestTestJButton.setText("Request Test");
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaceOrder.setText("PLACE ORDER");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                btnPlaceOrderActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 95, -1, -1));
+        add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
 
-        jLabel1.setText("Message");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 40, -1, -1));
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 37, 89, -1));
+        jLabel1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 14)); // NOI18N
+        jLabel1.setText("ORDER SPECIFICATION :");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
+        add(txtOrderMess, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 120, -1));
 
-        backJButton.setText("<<Back");
+        backJButton.setText("BACK");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 138, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
-        valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, -1));
+        valueLabel.setText(" ");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 130, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 30));
+        enterpriseLabel.setText("RESTAURANT");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+        String message = txtOrderMess.getText();
         
-        
-        
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+        LabTestWorkRequest request = new LabTestWorkRequest();
+        request.setMessage(message);
+        request.setSender(userAccount);
+        request.setStatus("Ordered");
+        Random random = new Random();
+        request.setId(restaurant.getRestaurentName() + random.nextInt(1000));
+        System.out.println(random.nextInt(2));
+        userAccount.getWorkQueue().getWorkRequestList().add(request);
+        restaurant.getUserAccount().getWorkQueue().getWorkRequestList().add(request);
+        JOptionPane.showMessageDialog(null, "Placed Order Successfully");
+
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         
@@ -100,10 +116,10 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnPlaceOrder;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField messageJTextField;
-    private javax.swing.JButton requestTestJButton;
+    private javax.swing.JTextField txtOrderMess;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }
