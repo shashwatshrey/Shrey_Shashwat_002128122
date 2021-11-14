@@ -43,7 +43,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
         Object[] row = new Object[3];
-        row[0] = cu.getCustName();
+        row[0] = cu;
         row[1] = cu.getCustAddress();
         model.addRow(row);
     }
@@ -128,7 +128,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        LabTestWorkRequest request = (LabTestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        LabTestWorkRequest request = new LabTestWorkRequest();
+        request.setTestResult(workRequestJTable.getValueAt(selectedRow, 0).toString());
         request.setStatus("Processing");
         
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);

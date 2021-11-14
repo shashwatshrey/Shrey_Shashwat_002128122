@@ -171,7 +171,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
        String id = (String)workRequestJTable.getValueAt(selectedRow, 2);
         System.out.println(name);
        for(Customer c : ecoSystem.getCustomerDirectory().getCustomerList()) {
-           if(c.getUserAccount().getUsername().equals(name)) {
+           if(c.getUserAccount().getUsername().equalsIgnoreCase(name)) {
                AssignDeliveryMan assignDeliveryMan = new AssignDeliveryMan(userProcessContainer,ecoSystem, restaurant, c, id);
                userProcessContainer.add("assignDeliveryMan", assignDeliveryMan);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
