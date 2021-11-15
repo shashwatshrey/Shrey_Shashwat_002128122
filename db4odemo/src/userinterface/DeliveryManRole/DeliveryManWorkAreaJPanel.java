@@ -9,7 +9,7 @@ import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
+import Business.WorkQueue.FoodDeliveryRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -33,7 +33,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.business = business;
         for(DeliveryMan dm : business.getDeliveryManDirectory().getDeliveryManList()){
-             if(dm.getDeliveryManName().equals(account.getUsername())) {
+             if(dm.getCustDetails()!= null && dm.getDeliveryManName().equals(account.getUsername())) {
                   populateTable(dm.getCustDetails());
              }
          }
@@ -128,8 +128,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        LabTestWorkRequest request = new LabTestWorkRequest();
-        request.setTestResult(workRequestJTable.getValueAt(selectedRow, 0).toString());
+        FoodDeliveryRequest request = new FoodDeliveryRequest();
+        request.setOrder(workRequestJTable.getValueAt(selectedRow, 0).toString());
         request.setStatus("Processing");
         
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
