@@ -73,7 +73,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 150, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 18)); // NOI18N
-        enterpriseLabel.setText("RESTAURANT :");
+        enterpriseLabel.setText("Restaurant Name : -> ");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 160, 30));
 
         valueLabel.setText(" ");

@@ -53,7 +53,7 @@ public class AssignDeliveryMan extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        addMenuBtn.setText("ASSIGN");
+        addMenuBtn.setText("Assign for Order");
         addMenuBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addMenuBtnActionPerformed(evt);
