@@ -8,8 +8,7 @@ import Business.EcoSystem;
 import Business.Organization;
 import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FoodDeliveryRequest;
-//import Business.WorkQueue.LabTestWorkRequest;
+import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.Random;
@@ -90,7 +89,7 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
         String message = txtOrderMess.getText();
         
-        FoodDeliveryRequest request = new FoodDeliveryRequest();
+        LabTestWorkRequest request = new LabTestWorkRequest();
         request.setMessage(message);
         request.setSender(userAccount);
         request.setStatus("Ordered");

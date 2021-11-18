@@ -4,8 +4,7 @@
  */
 package userinterface.DeliveryManRole;
 
-//import Business.WorkQueue.LabTestWorkRequest;
-import Business.WorkQueue.FoodDeliveryRequest;
+import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -14,11 +13,11 @@ import javax.swing.JPanel;
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    FoodDeliveryRequest request;
+    LabTestWorkRequest request;
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public ProcessWorkRequestJPanel(JPanel userProcessContainer, FoodDeliveryRequest request) {
+    public ProcessWorkRequestJPanel(JPanel userProcessContainer, LabTestWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -103,7 +102,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        request.setOrder(resultJTextField.getText());
+        request.setTestResult(resultJTextField.getText());
         request.setStatus("Completed");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
