@@ -6,8 +6,16 @@ package Business.WorkQueue;
 
 
 public class OrderWorkRequest extends WorkRequest{
- 
+    private String OrderStatus;
     private String OrderItem;
+
+    public String getOrderStatus() {
+        return OrderStatus;
+    }
+
+    public void setOrderStatus(String OrderStatus) {
+        this.OrderStatus = OrderStatus;
+    }
 
     public String getOrderItem() {
         return OrderItem;
@@ -16,6 +24,8 @@ public class OrderWorkRequest extends WorkRequest{
     public void setOrderItem(String OrderItem) {
         this.OrderItem = OrderItem;
     }
+
+    
     
    
     
