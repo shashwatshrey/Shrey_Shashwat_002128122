@@ -89,7 +89,7 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
         request.setSender(userAccount);
         request.setStatus("Ordered");
         Random random = new Random();
-        request.setId(restaurant.getRestaurentName() + random.nextInt(1000));
+        request.setId(" "  + random.nextInt(1000));
         System.out.println(random.nextInt(2));
         userAccount.getWorkQueue().getWorkRequestList().add(request);
         restaurant.getUserAccount().getWorkQueue().getWorkRequestList().add(request);

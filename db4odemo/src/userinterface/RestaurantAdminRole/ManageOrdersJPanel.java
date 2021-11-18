@@ -25,6 +25,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private EcoSystem ecoSystem;
     private Restaurant restaurant;
     
+    
     public ManageOrdersJPanel(JPanel userProcessContainer, EcoSystem ecoSystem,  Restaurant restaurant) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
