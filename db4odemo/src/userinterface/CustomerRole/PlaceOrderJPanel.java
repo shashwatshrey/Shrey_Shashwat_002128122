@@ -52,7 +52,6 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
         txtOrderMess = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
-        enterpriseLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -63,12 +62,12 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
                 btnPlaceOrderActionPerformed(evt);
             }
         });
-        add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+        add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 14)); // NOI18N
-        jLabel1.setText("ORDER SPECIFICATION :");
+        jLabel1.setText("Add Instructions : ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
-        add(txtOrderMess, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 120, -1));
+        add(txtOrderMess, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 170, -1));
 
         backJButton.setText("BACK");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,10 +79,6 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
 
         valueLabel.setText(" ");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 130, -1));
-
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("RESTAURANT");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
@@ -117,7 +112,6 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnPlaceOrder;
-    private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtOrderMess;
     private javax.swing.JLabel valueLabel;

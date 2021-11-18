@@ -95,7 +95,7 @@ import javax.swing.table.DefaultTableModel;
             }
         });
 
-        addMenuBtn.setText("ADD");
+        addMenuBtn.setText("Add Item");
         addMenuBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addMenuBtnActionPerformed(evt);

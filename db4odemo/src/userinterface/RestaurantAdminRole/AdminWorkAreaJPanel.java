@@ -62,7 +62,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 150, -1));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 150, -1));
 
         manageOrganizationJButton.setText("MANAGE ORDER ");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +70,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, -1));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 150, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 18)); // NOI18N
         enterpriseLabel.setText("RESTAURANT :");
