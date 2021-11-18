@@ -108,7 +108,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
-        requestTestJButton.setText("ASSIGN DELIVERY MAN");
+        requestTestJButton.setText("Take Action");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);

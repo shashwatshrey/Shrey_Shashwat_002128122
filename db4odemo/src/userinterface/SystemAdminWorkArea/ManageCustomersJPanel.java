@@ -49,7 +49,6 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         custJTable = new javax.swing.JTable();
-        btnRefresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         txtCustName = new javax.swing.JTextField();
@@ -96,13 +95,6 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(custJTable);
-
-        btnRefresh.setText("REFRESH");
-        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRefreshActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("NAME                  :");
 
@@ -188,7 +180,6 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                                     .addComponent(txtCustPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(69, 69, 69)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnRefresh)
                                     .addComponent(btnUpdateCust, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnCreate)
                                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,7 +187,7 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                 .addGap(113, 229, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnDelete, btnRefresh, btnUpdateCust, saveBtn});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnDelete, btnUpdateCust, saveBtn});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,9 +222,7 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel5)
                             .addComponent(txtCustPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(btnRefresh)
-                        .addGap(13, 13, 13)
+                        .addGap(69, 69, 69)
                         .addComponent(btnCreate)
                         .addGap(15, 15, 15)
                         .addComponent(btnUpdateCust)
@@ -271,12 +260,6 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                 model.addRow(row);
                 }  
     }
-    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-
-        populateTable();
-
-    }//GEN-LAST:event_btnRefreshActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -379,7 +362,6 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdateCust;
     private javax.swing.JComboBox cbxRole;
     private javax.swing.JTable custJTable;
