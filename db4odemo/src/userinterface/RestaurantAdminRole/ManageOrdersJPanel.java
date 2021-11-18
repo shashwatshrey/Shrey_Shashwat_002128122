@@ -70,7 +70,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         requestTestJButton = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(153, 153, 153));
+        setBackground(java.awt.Color.pink);
 
         workRequestJTable.setBackground(new java.awt.Color(204, 204, 204));
         workRequestJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));

@@ -53,7 +53,7 @@ import javax.swing.table.DefaultTableModel;
         newMenuTextField = new javax.swing.JTextField();
         addMenuBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(153, 153, 153));
+        setBackground(new java.awt.Color(102, 0, 102));
 
         btnBack.setText("BACK ");
         btnBack.addActionListener(new java.awt.event.ActionListener() {

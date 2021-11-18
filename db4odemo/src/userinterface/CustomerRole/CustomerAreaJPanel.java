@@ -67,7 +67,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         previousOrderTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(153, 153, 153));
+        setBackground(new java.awt.Color(153, 153, 255));
 
         menuTable.setBackground(new java.awt.Color(204, 204, 204));
         menuTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
