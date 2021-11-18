@@ -4,9 +4,14 @@
  */
 package userinterface.DeliveryManRole;
 
+import Business.Customer.Customer;
+import Business.EcoSystem;
+import Business.Restaurant.Restaurant;
 import Business.WorkQueue.OrderWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -14,9 +19,26 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
     OrderWorkRequest request;
+    //JPanel userProcessContainer;
+    private EcoSystem ecoSystem;
+    private Restaurant restaurant;
+    private Customer cust;
+    private String id;
+    /**
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
+    public ProcessWorkRequestJPanel(JPanel userProcessContainer, EcoSystem ecoSystem,
+        Restaurant restaurant,  Customer cust, String id){
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = ecoSystem;
+        this.restaurant = restaurant;
+        this.cust = cust;
+        this.id = id;
+        //populateTable();
+    }
+    
     public ProcessWorkRequestJPanel(JPanel userProcessContainer, OrderWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -100,8 +122,13 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        request.setOrderItem(resultJTextField.getText());
-        request.setStatus("Completed");
+        for(WorkRequest wr : cust.getUserAccount().getWorkQueue().getWorkRequestList()){
+           if (wr.getId() == id) {
+               wr.setStatus("Out for Delivery!");
+           }
+           
+       };
+       JOptionPane.showMessageDialog(null, "Accepted for Delivery!");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
